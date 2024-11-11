@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Timesheet Automator</title>
+  <style>
+    body {
+      width: 400px;
+      padding: 10px;
+    }
+    .form-group {
+      margin-bottom: 15px;
+    }
+    label {
+      display: block;
+      margin-bottom: 5px;
+      font-weight: bold;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 8px;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+    }
+    textarea {
+      min-height: 100px;
+      font-family: Arial, sans-serif;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #0066cc;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #0052a3;
+    }
+    .error {
+      color: red;
+      margin-top: 5px;
+      font-size: 14px;
+    }
+    .pulse-text {
+        font-weight: bold;
+        font-size: 1.5em;
+        animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+        0% { color: #ff0080; }
+        50% { color: #8000ff; }
+        100% { color: #ff0080; }
+    }
+  </style>
+</head>
+<body>
+    <div class="pulse-text">
+        <span>Timesheet Automator By Ankitkumar Singh</span>
+    </div>
+  <div class="form-group">
+    <label for="projectName">Project Name(Timesheet where you want to log):</label>
+    <input id="projectName" placeholder="Enter project name to search, E.g Event "/>
+  </div>
+  
+  <div class="form-group">
+    <label for="fromDate">From Date:</label>
+    <input type="date" id="fromDate">
+  </div>
+  
+  <div class="form-group">
+    <label for="toDate">To Date:</label>
+    <input type="date" id="toDate">
+  </div>
+  
+  <div class="form-group">
+    <label for="duration">Hours per day:</label>
+    <select id="duration">
+      <option value="450">7 hours 30 mins</option>
+      <option value="480" selected>8 hours</option>
+      <option value="510">8 hours 30 mins</option>
+      <option value="540">9 hours</option>
+    </select>
+  </div>
+  
+  <div class="form-group">
+    <label for="descriptions">Descriptions (Enter one log per line starting with number and ]):</label>
+    <textarea id="descriptions" placeholder="1] Work on web app&#13;&#10;2] Work on mobile app&#13;&#10;3] Code review"></textarea>
+  </div>
+  
+  <div id="errorMessage" class="error"></div>
+  <button id="fillTimesheet">Fill Timesheet</button>
+  
+  <script src="popup.js"></script>
+</body>
+</html>

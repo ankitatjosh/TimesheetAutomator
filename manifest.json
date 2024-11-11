@@ -1,0 +1,29 @@
+{
+    "manifest_version": 3,
+    "name": "Timesheet Automator By thedevAnkit",
+    "version": "1.0",
+    "description": "Automates timesheet entry with multiple rows and descriptions",
+    "permissions": ["activeTab", "storage"],
+    "icons": {
+        "16": "icon16.png",
+        "32": "icon32.png",
+        "48": "icon48.png",
+        "128": "icon128.png"
+      },       
+    "action": {
+        "default_icon": {
+        "16": "icon16.png",
+        "32": "icon32.png",
+        "48": "icon48.png"
+      },
+      "default_popup": "popup.html"
+    },
+    "content_scripts": [
+      {
+        "matches": ["<all_urls>"],
+        "js": ["content.js"]
+      }
+    ]
+  }
+  
+  
