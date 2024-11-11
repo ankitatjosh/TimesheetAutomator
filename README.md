@@ -1,8 +1,9 @@
 # Timesheet Automator
 Automates timesheet entry with multiple rows and descriptions. You can select the From and To Date to automatically fill your timesheet.
+
 ![image](https://github.com/user-attachments/assets/a8b40e38-0f73-41ea-9226-0dae2badd97b)
 
-## How to Install a Chrome Extension from GitHub
+## Chrome/Brave/Edge Extension Installation Steps 
 
 ### Prerequisites
 - Google Chrome/ Edge/ Brave browser installed
