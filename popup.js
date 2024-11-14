@@ -6,6 +6,7 @@ document.getElementById('fillTimesheet').addEventListener('click', async () => {
   const fromDate = document.getElementById('fromDate').value;
   const toDate = document.getElementById('toDate').value;
   const duration = document.getElementById('duration').value;
+  const isApplyforAll = document.getElementById('forAll').value == "true"? true: false;
   
   // Parse descriptions - split by newline and filter out empty lines
   const descriptionsText = document.getElementById('descriptions').value;
@@ -15,7 +16,6 @@ document.getElementById('fillTimesheet').addEventListener('click', async () => {
     // .filter(line => line && /^\d+]\s*/.test(line)) 
     // .map(line => line.replace(/^\d+]\s*/, ''));
 
-debugger
   // Validation
   if (!projectName) {
     errorDiv.textContent = 'Please enter a project name';
@@ -35,7 +35,8 @@ debugger
     fromDate,
     toDate,
     duration,
-    descriptions
+    descriptions,
+    isApplyforAll
   };
 
   const [tab] = await chrome.tabs.query({ active: true, currentWindow: true });
@@ -44,4 +45,6 @@ debugger
     action: 'fillTimesheet',
     data
   });
+  debugger
+  chrome.tabs.remove();
 });
