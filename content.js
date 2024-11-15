@@ -27,24 +27,23 @@ function findProjectId(projectName) {
 function parseDescriptions(descriptions, isApplyForAll, loopCount) {
     const parsedDescriptions = [];
     let descriptionIndex = 1;
-    const regex = new RegExp(`^${descriptionIndex}\\]`);
 
-    // Check if there's only one description and isApplyForAll is true
     if (isApplyForAll && descriptions.length === 1) {
-        // Repeat the single description `loopCount` times
         for (let i = 0; i < loopCount; i++) {
-            parsedDescriptions.push(descriptions[0].replace(regex, '').trim());
+            parsedDescriptions.push(descriptions[0].replace("1]", "").trim());
         }
+        return parsedDescriptions;
     } else {
         descriptions.forEach(desc => {
-            if (regex.test(desc.trim())) {
+            const regex = new RegExp(`^${descriptionIndex}\\]`);
+
+            // if (regex.test(desc.trim())) {
                 parsedDescriptions.push(desc.replace(regex, '').trim());
                 descriptionIndex += 1;
-            }
+            // }
         });
-    }
-
-    return parsedDescriptions;
+        return parsedDescriptions;
+    }    
 }
 
 chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
@@ -93,7 +92,7 @@ chrome.runtime.onMessage.addListener((request, sender, sendResponse) => {
 
                 const descriptionTextarea = row.querySelector('textarea');
                 if (descriptionTextarea && parsedDescriptions[index]) {
-                    descriptionTextarea.value = parsedDescriptions[index];
+                    descriptionTextarea.value = parsedDescriptions[index];                    
                     descriptionTextarea.dispatchEvent(new Event('change'));
                 }
             });

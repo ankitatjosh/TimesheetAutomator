@@ -46,5 +46,4 @@ document.getElementById('fillTimesheet').addEventListener('click', async () => {
     data
   });
   debugger
-  chrome.tabs.remove();
 });
