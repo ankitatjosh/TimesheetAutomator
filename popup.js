@@ -45,5 +45,24 @@ document.getElementById('fillTimesheet').addEventListener('click', async () => {
     action: 'fillTimesheet',
     data
   });
-  debugger
+});
+
+document.getElementById('donate-btn').addEventListener('click', async () => {
+  const getTimesheetForm = document.getElementById('timesheetForm');
+  const showDonate = document.getElementById('showDonate');
+ // getTimesheetForm.style.display = "none";
+ debugger
+ var elem = document.getElementById("donate-btn");
+    if (elem.innerHTML=="Donate Now") elem.innerHTML = "BACK";
+    else elem.innerHTML = "Donate Now";
+
+  if (getTimesheetForm.style.display === "block") {
+    getTimesheetForm.style.display = "none";
+    document.getElementById('fillTimesheet').style.display = 'none';
+    showDonate.style.display = "block";
+  } else {
+    document.getElementById('fillTimesheet').style.display = 'inline';
+    getTimesheetForm.style.display = "block";
+    showDonate.style.display = "none";
+  }
 });

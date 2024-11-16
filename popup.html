@@ -27,7 +27,7 @@
       font-family: Arial, sans-serif;
     }
     button {
-      width: 100%;
+      width: 49%;
       padding: 10px;
       background: #0066cc;
       color: white;
@@ -47,6 +47,7 @@
     .pulse-text {
         font-weight: bold;
         font-size: 1.5em;
+        margin-bottom: 6px;
         animation: pulse 2s infinite;
     }
     .row{
@@ -64,6 +65,20 @@
       display: inline-block !important;
       vertical-align: bottom !important;
     }
+    .donate-btn-5 {
+      position: relative;
+      padding: 6px;
+      font-size: 18px;
+      background: #fff9b3;
+      border: #e1ff37 solid 2px;
+      border-radius: 4px;
+      cursor: pointer;
+      overflow: hidden;
+    }
+
+  .donate-btn-5:hover {
+    background: #e1ff37;
+  }
 
     @keyframes pulse {
         0% { color: #ff0080; }
@@ -73,9 +88,10 @@
   </style>
 </head>
 <body>
-    <div class="pulse-text">
-        <span>Timesheet Automator By Ankitkumar Singh</span>
-    </div>
+  <div class="pulse-text">
+      <span>Timesheet Automator By Ankitkumar Singh</span>
+  </div>
+  <div id="timesheetForm"  style="display: block;">
   <div class="form-group">
     <label for="projectName">Project Name(Timesheet where you want to log):</label>
     <input id="projectName" placeholder="Enter project name to search, E.g Event "/>
@@ -111,9 +127,17 @@
     <input class="col-1" type="checkbox" id="forAll" name="forAll" value="true">
     <label class="col-2" for="forAll"> Apply same description to all the dates</label>
   </div>
-
+  </div>
+  <div id="showDonate" style="display: none;">
+    <img src="donate.jpg" alt="donate" width="400px" height="400px">
+  </div>
   <div id="errorMessage" class="error"></div>
-  <button id="fillTimesheet">Fill Timesheet</button>
+  <div class="row">
+    <button id="fillTimesheet">FILL TIMESHEET</button>
+    <div style="display: inline;">
+      <button class="donate-btn-5 pulse-text " id="donate-btn">Donate Now</button>
+    </div>
+  </div>
   
   <script src="popup.js"></script>
 </body>
