@@ -3,7 +3,7 @@
     "name": "Timesheet Automator By thedevAnkit",
     "version": "1.0",
     "description": "Automates timesheet entry with multiple rows and descriptions",
-    "permissions": ["activeTab", "storage"],
+    "permissions": ["activeTab"],
     "icons": {
         "16": "icon16.png",
         "32": "icon32.png",
